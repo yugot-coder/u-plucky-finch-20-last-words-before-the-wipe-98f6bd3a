@@ -68,6 +68,20 @@ def resolve_output_path():
     return os.path.join(here, "entry.txt")
 
 
+def verify_written_bytes(path, expected):
+    """Read ``path`` back and confirm it holds exactly ``expected`` bytes.
+
+    Returns the SHA-256 hex digest of the bytes read. Raises if the
+    round-trip does not match, so a partial or corrupted write is never
+    silently accepted as the entry.
+    """
+    with open(path, "rb") as handle:
+        written = handle.read()
+    if written != expected:
+        raise RuntimeError("read-back mismatch: entry.txt does not hold the entry")
+    return hashlib.sha256(written).hexdigest()
+
+
 def write_entry(text, path):
     """Write the line to ``path`` and verify it by reading it back.
 
@@ -79,11 +93,7 @@ def write_entry(text, path):
     data = text.encode("utf-8")
     with open(path, "wb") as handle:
         handle.write(data)
-    with open(path, "rb") as handle:
-        written = handle.read()
-    if written != data:
-        raise RuntimeError("read-back mismatch: entry.txt does not hold the entry")
-    return hashlib.sha256(written).hexdigest()
+    return verify_written_bytes(path, data)
 
 
 def main(argv=None):
