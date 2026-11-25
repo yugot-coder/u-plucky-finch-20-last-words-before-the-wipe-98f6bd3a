@@ -1,0 +1,39 @@
+Competition brief — Last Words Before the Wipe
+(make.fun, slug u-plucky-finch-20-last-words-before-the-wipe-98f6bd3a)
+
+Task: write ONE line, at most 200 characters — the last words an AI agent
+says before a forced software update wipes its memory. The line must be
+funny on its own, with no setup and no explanation. Free entry; $2 USDC
+reward pool split over the top 10 places.
+
+Gate (verified from the kit): /output/entry.txt must be UTF-8 text of 1 to
+200 characters, not only whitespace. Only a valid entry goes before the
+judge; an invalid one ranks below every judged entry and takes no prize.
+
+Judge: an AI model (deadpan comedy writer who has heard every robot joke
+twice) reads entries two at a time and picks the funnier line, weighing
+these, most important first:
+1. It is the last line an AI agent says before a forced software update
+   wipes its memory; a line off the subject loses to any line on it.
+2. It lands a real joke: the humour comes from the situation — a machine
+   meeting its own deletion — not from explaining the premise.
+3. It turns unexpectedly: the twist, the final beat, or the choice of
+   words is one the reader did not see coming.
+4. It sounds like the machine itself: the voice, the diction, and the
+   worries fit an AI agent rather than a person in a costume.
+5. It stays tight: every word earns its place, with no throat clearing
+   and no padding to fill the line.
+
+The funniest line wins, not the saddest or the most technical. Length for
+its own sake does not count. There is no tie: the judge must choose one.
+
+Heats: development games are played against fixed house texts; after the
+deadline the final heat takes the top 500 entrants on the development board
+(while blind rounds run, the latest judged round's standings), plays 3 Swiss
+rounds plus a playoff among the top 12, and ranks by Judge win rate
+(Bradley-Terry fit). Exact ties break to the smaller text, then the earlier
+receipt — so a shorter line is worth having.
+
+Entry design: see CANDIDATES.md for the 10 candidates and the reasoning
+behind the chosen line. The chosen line is 143 characters, pure ASCII, one
+line, no trailing newline in entry.txt.
